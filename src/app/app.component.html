@@ -1,0 +1,64 @@
+<!-- <app-navbar></app-navbar> -->
+
+<div id="app-navbar"></div>
+
+-----------------------------------------------------------------
+
+<h1>Hello : {{ title }}</h1>
+<h3> Let's Start : {{ fname }} {{ lname }} {{ binary }}</h3>
+<h3>1. Event Binding</h3>
+<button (click)="hello()">Greeting</button>
+<b> {{ greet }}</b>
+<br><br>
+
+------------------------------------------------------------------
+
+<h3>There are three types of image rendering</h3>
+
+<h4>1. Interpolation</h4>
+<img src="{{ path }}" height="300" width="500">
+
+<h4>2. Normal Binding</h4>
+<img src="2.jpg" height="300" width="500">
+
+<h4>3. Property Binding</h4>
+<img [src]=path [title]=path height="300" width="500">
+
+<br><br>
+
+-------------------------------------------------------------------
+
+<h3>Component use by three types</h3>
+
+<h3>1. Tag Types</h3>
+<app-main></app-main>
+
+<h3>2. Id Name</h3>
+<div id="app-navbar"></div>
+
+<h3>3. Class Name</h3>
+<div class="app-footer"></div>
+
+<h3>4. Attribute Name</h3>
+<div app-header></div>
+
+--------------------------------------------------------------------
+
+<h4>Manipulate the input with the text </h4>
+
+<h4>1. Input Event</h4>
+<input type="text" (input)="changes($event)" value={{changeText}}>
+<b>{{ changeText }}</b>
+
+<br>
+
+<h4>2. ngModel ( Predefined Module )</h4>
+<b>Search : </b><input type=" text" [(ngModel)]="changeText">
+<b *ngIf="changeText"> Are you Searching for : {{ changeText }} </b>
+<br><br>
+
+---------------------------------------------------------------------
+<br><br>
+<input type="button" (click)="changeColor()" value="Change Color">
+
+<font size="6" [ngStyle]="{'color':color}">Hello</font>
