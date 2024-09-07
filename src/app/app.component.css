@@ -4,3 +4,12 @@
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
+
+.active{
+    background-color: red;
+}
+.no-active{
+    background-color: green;
+}
+.border{ border: 5px solid black; }
+.no-border{ border: 5px solid yellow; }

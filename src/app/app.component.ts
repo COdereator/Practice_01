@@ -22,7 +22,9 @@ export class AppComponent {
   path = '2.jpg';
   toggle = false
   greet:any
-  
+
+  isActive = false;
+
   hello(){    
     if(this.toggle){
       this.greet=""

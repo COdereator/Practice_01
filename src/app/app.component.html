@@ -11,9 +11,16 @@
 <b> {{ greet }}</b>
 <br><br>
 
+<button 
+    [class.active]="isActive"
+    [class.no-active]="!isActive"
+    [class.border]="isActive"
+    [class.no-border]="!isActive"
+>Hello</button>
+
 ------------------------------------------------------------------
 
-<h3>There are three types of image rendering</h3>
+<h3>There are three types of data binding</h3>
 
 <h4>1. Interpolation</h4>
 <img src="{{ path }}" height="300" width="500">
