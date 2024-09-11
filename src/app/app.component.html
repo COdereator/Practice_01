@@ -69,3 +69,16 @@
 <input type="button" (click)="changeColor()" value="Change Color">
 
 <font size="6" [ngStyle]="{'color':color}">Hello</font>
+
+
+<!-- style binding -->
+
+<button [style.backgroundColor]=" isActive ? 'grey' : 'green'"
+        [style.border] = "isActive ? '5px solid red' : ''"
+>Button</button>
+
+<button [class.active]="isActive">Button</button>
+
+<!-- event binding  -->
+
+<button (mouseover)="buttonClick()">Button</button>

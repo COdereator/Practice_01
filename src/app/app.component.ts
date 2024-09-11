@@ -23,7 +23,11 @@ export class AppComponent {
   toggle = false
   greet:any
 
-  isActive = false;
+  isActive = true;
+
+  buttonClick(){
+    console.log("Hello Button : "+Math.floor(Math.random()*10));
+  }
 
   hello(){    
     if(this.toggle){
@@ -44,7 +48,7 @@ export class AppComponent {
   }
   change = false;
   color = ""
-  
+
   changeColor(){
     this.change = !this.change
     if(this.change== true){
