@@ -6,11 +6,12 @@ import { MainComponent } from './component/main/main.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { StructuralComponent } from './structural/structural.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent,MainComponent,HeaderComponent,FormsModule,CommonModule],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent,MainComponent,HeaderComponent,FormsModule,CommonModule,StructuralComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -27,6 +28,27 @@ export class AppComponent {
 
   buttonClick(){
     console.log("Hello Button : "+Math.floor(Math.random()*10));
+    alert("Hello Button : "+Math.floor(Math.random()*10))
+  } 
+
+  buttonOver(){
+    alert("Hello Hover");
+  }
+
+  keyUp(evt:any){
+    if(evt.key =="Enter"){
+      console.log(evt.target.value);
+    }
+  }
+
+  userName = "Hello"
+  updateUserName(username:HTMLInputElement){
+    this.userName = username.value
+    console.log(this.userName);
+  }
+
+  keyFilter(user:HTMLInputElement){
+    console.log(user.value);
   }
 
   hello(){    

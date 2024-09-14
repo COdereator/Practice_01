@@ -1,5 +1,6 @@
 *{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-weight: bold;
 }
 /* @tailwind base;
 @tailwind components;
@@ -11,5 +12,9 @@
 .no-active{
     background-color: green;
 }
-.border{ border: 5px solid black; }
-.no-border{ border: 5px solid yellow; }
+.border{ 
+    border: 5px solid black; 
+}
+.no-border{
+    border: 5px solid yellow; 
+}

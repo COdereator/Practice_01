@@ -72,13 +72,31 @@
 
 
 <!-- style binding -->
-
+<h1>Style Binding</h1>
 <button [style.backgroundColor]=" isActive ? 'grey' : 'green'"
         [style.border] = "isActive ? '5px solid red' : ''"
 >Button</button>
 
+<h1>Class Binding</h1>
 <button [class.active]="isActive">Button</button>
 
 <!-- event binding  -->
+<h1>Event Binding</h1>
+<button (click)="buttonClick()">Click Me</button>
+<button (mouseover)="buttonOver()">Hover Me</button>
 
-<button (mouseover)="buttonClick()">Button</button>
+
+<input type="text" (keyup)="keyUp($event)">
+
+<input type="text" (keyup.enter)="keyFilter(user)" #user>
+
+<h1>Two way Data Binding</h1>
+<!-- Template Variable -->
+<input type="text" [value]="userName" #username (keyup.enter)="updateUserName(username)">
+
+<h1>Using ngModel</h1>
+<input type="text" [(ngModel)]="userName">
+Hello : {{ userName }}
+
+
+<app-structural></app-structural>

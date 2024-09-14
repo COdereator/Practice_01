@@ -1,0 +1,14 @@
+<h1>Structure Directives</h1>
+
+<!-- old way -->
+<h2 *ngIf="isLoggedIn">Name : {{ userName }}</h2>
+
+<h2 *ngIf="!isLoggedIn">There is no name</h2>
+
+<!-- new way -->
+@if(isLoggedIn){
+    <h2>Name : {{ userName }}</h2>
+}
+@else{
+    <h2>There is no name</h2>
+}
