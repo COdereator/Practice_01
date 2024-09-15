@@ -1,14 +1,62 @@
 <h1>Structure Directives</h1>
 
 <!-- old way -->
-<h2 *ngIf="isLoggedIn">Name : {{ userName }}</h2>
+<h2 *ngIf="isLoggedIn; else message">Name : {{ userName }}</h2>
 
-<h2 *ngIf="!isLoggedIn">There is no name</h2>
+<h2 *ngIf="!isLoggedIn">User is not login ( using not syntax )</h2>
+
+<!-- ng template -->
+<ng-template #message>
+    <h2>User is not login ( using ng-template ) </h2>
+</ng-template>
+
 
 <!-- new way -->
 @if(isLoggedIn){
     <h2>Name : {{ userName }}</h2>
 }
 @else{
-    <h2>There is no name</h2>
+    <h2>User is not login ( using else syntax )</h2>
+}
+
+<button (click)="checkLogin()">Check User</button>
+
+<!-- multiple condition -->
+<!-- old approach -->
+
+<h4 *ngIf="isAdmin; else memberMessage">Admin Login</h4>
+
+<ng-template #memberMessage>
+    <h4 *ngIf="isMember; else guestMessage">Member Login</h4>
+</ng-template>
+
+<ng-template #guestMessage>
+    <h4 *ngIf="isGuest">Guest Login</h4>
+</ng-template>
+
+<!-- @if @else syntax approach -->
+
+@if(isAdmin){
+    <h4>Admin Login</h4>
+}
+@else if(isMember){
+    <h4>Member Login</h4>
+}
+@else{
+    <h4>Guest Login</h4>
+}
+
+<!-- *ngIf in numbers -->
+
+<button (click)="limitExceed()" *ngIf="limit < 4">Login</button>
+<br><br>
+<h2 *ngIf="limit > 3">
+    Limit Exceeded
+</h2>
+
+@if(limit <= 3){
+    <button (click)="limitExceed()">Login Syntax</button>
+}
+@if(limit >= 3){
+    <h2>Limit Exceeded Using Approach</h2>
 }

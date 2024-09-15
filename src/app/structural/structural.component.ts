@@ -9,7 +9,21 @@ import { Component } from '@angular/core';
   styleUrl: './structural.component.css'
 })
 export class StructuralComponent {
-  isLoggedIn:boolean = false; 
+  isLoggedIn:boolean = true; 
   userName = "John Doe"
+
+  checkLogin(){
+    this.isLoggedIn = !this.isLoggedIn
+  }
+
+  limit = 1;
+
+  isAdmin = false;
+  isMember = false;
+  isGuest = true;
+
+  limitExceed(){
+    this.limit++
+  }
 
 }
