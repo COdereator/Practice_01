@@ -60,3 +60,79 @@
 @if(limit >= 3){
     <h2>Limit Exceeded Using Approach</h2>
 }
+
+<ng-template #repeat>
+    <button>Join Now</button>
+</ng-template>
+
+
+<div [ngTemplateOutlet]="repeat">
+    <h4>SideBar</h4>
+</div>
+<div [ngTemplateOutlet]="repeat">
+    <h4>Main</h4>
+</div>
+<div [ngTemplateOutlet]="repeat">
+    <h4>Footer</h4>
+</div>
+
+<!-- ng For Directive -->
+<h2> *ngFor Directive </h2>
+
+<!-- print all the elements -->
+<h2>{{ users }}</h2>
+
+<!-- print single element from the array -->
+<!-- 
+    <h2>{{ users[0] }}</h2>
+    <h2>{{ users[1] }}</h2>
+    <h2>{{ users[2] }}</h2>
+    <h2>{{ users[3] }}</h2>
+    <h2>{{ users[4] }}</h2> 
+-->
+
+<!-- using ngFor Directive -->
+<p *ngFor="let user of users">{{ user }}</p>
+
+<!-- for syntax approach -->
+@for(user of users; track user){
+    <p>{{ user }} - using for syntax</p>
+}
+
+<!-- creating list -->
+
+<ul>
+    <li *ngFor="let user of users">
+        {{ user }}
+    </li>
+</ul>
+
+<!-- for syntax approach -->
+<ul>
+    @for(user of users;track user){
+        <li>{{ user }} - using for syntax</li>
+    }
+</ul>
+<hr>
+
+<!-- object using -->
+
+<div class="card" *ngFor="let user of usersObj">
+    <p> Name  : {{ user.name }}  </p>
+    <p> Email : {{ user.email }} </p>
+    <img src="{{ user.image }}" height="170" width="250">
+    <hr><hr>
+</div>
+
+
+<!-- using ngFor syntax -->
+<!-- 
+    @for(user of usersObj; track user){
+        <div class="card">
+            <p> Name  : {{ user.name }}  </p>
+            <p> Email : {{ user.email }} </p>
+            <img src="{{ user.image }}" height="170" width="250">
+            <hr><hr>
+        </div>
+    } 
+-->
