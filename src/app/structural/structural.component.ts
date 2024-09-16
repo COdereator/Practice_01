@@ -32,7 +32,20 @@ export class StructuralComponent {
     {id: 1,name: 'John', email: 'john@gmail.com',image:'1.jfif'},
     {id: 2,name: 'Smith', email: 'smith@gmail.com',image:'2.jfif'},
     {id: 3,name: 'Sam', email: 'sam@gmail.com',image:'3.jfif'},
-    {id: 4,name: 'Raj', email: 'raj@gmail.com',image:'1.jpg'}
+    {id: 4,name: 'Raj', email: 'raj@gmail.com',image:'4.jfif'}
   ]
+
+  addUser(){
+
+    let images = ['1.jfif','2.jfif','3.jfif','4.jfif'];
+    let image = images[Math.floor(Math.random() * images.length)];
+    let user = {id: Math.floor(Math.random()*10),name: 'John', email: 'john@gmail.com',image:image};
+    this.usersObj.push(user);
+  }
+
+  onDelete(user:object){
+    let index = this.usersObj.indexOf(user);
+    this.usersObj.splice(index,1);
+  }
 
 }
