@@ -26,3 +26,8 @@ otherwise we will use class binding
     - These directives change the appearance of an element component, or another directive. Common examples include ngClass and ngStyle.
 4. Custom Directives
     - which can create our own Directives from scratch.
+
+## ng-template
+- ng-template is a powerful tool in angular that allows us to define template content that can be used later in out application. Unlike regular HTML elements, ng-template itself will not redered inside the DOM, we can use it when we need  
+
+## ngTemplateOutlet
