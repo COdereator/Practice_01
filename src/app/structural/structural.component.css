@@ -10,3 +10,11 @@
     z-index: 5;
     bottom: 10px;
 }
+.login{
+    color: green;
+    text-transform: uppercase;
+}
+.logout{
+    color: red;
+    text-transform: lowercase;
+}

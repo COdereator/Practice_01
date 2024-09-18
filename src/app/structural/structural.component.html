@@ -117,29 +117,83 @@
 
 <!-- object using -->
 
-<div class="card" *ngFor="let user of usersObj">
-    <p> Name  : {{ user.name }}  </p>
-    <p> Email : {{ user.email }} </p>
+<!-- <div class="card" *ngFor="let user of usersObj; let i = index; let userCount = count">
+    <p> Name  : {{ user.name }} {{ i }}  </p>
+    <p> Email : {{ user.email }}         </p>
     <img src="{{ user.image }}" height="170" width="250"> <br> 
     <hr>
-    <button (click)="onDelete(user)" >Delete</button>
+    <button (click)="onDelete(i)" >Delete</button>
     <hr>
-</div>
+</div> -->
 
+<h1 *ngIf="usersObj.length == 0">No User to display</h1>
 
 <!-- using ngFor syntax -->
-<!-- 
-    @for(user of usersObj; track user.id){
-        <div class="card">
-            <p> Name  : {{ user.name }}  </p>
-            <p> Email : {{ user.email }} </p>
-            <img src="{{ user.image }}" height="170" width="250">
-            <hr><hr>
-        </div>
-    } 
--->
 
+@for(user of usersObj; track user.id; let index = $index; let userCount = $count){
+    <div class="card">
+        <p> Name  : {{ user.name }} {{ index }}  </p>
+        <p> Email : {{ user.email }} </p>
+        <img src="{{ user.image }}" height="170" width="250">
+        <hr>
+        <button (click)="onDelete(index)" >Delete</button>
+        <hr>
+    </div>
+}
+
+<!-- 
+    let last = $last
+    let first = $first
+    let even = $even
+    let odd = $odd 
+    let count = $count
+    let index = $index
+-->
 
 <!-- change detection -->
 <br><br>
 <button (click)="addUser()" class="btn">Add User</button>
+
+<!-- ngSwitchCase -->
+
+<div [ngSwitch]="userRole">
+    <p *ngSwitchCase="'Admin'">Welcome Admin</p>
+    <p *ngSwitchCase="'Member'">Welcome Member</p>
+    <p *ngSwitchCase="'Editor'">Welcome Editor</p>
+    <p *ngSwitchDefault>Please Login</p>
+</div>
+
+<!-- newest way -->
+
+@switch (userRole) {
+    @case ('Admin') {
+        <p>Welcome Admin</p>
+    }
+    @case ('Member') {
+        <p>Welcome Member</p>
+    }
+    @case ('Editor') {
+        <p>Welcome Editor</p>
+    }
+    @default {
+        <p>Please Login</p>
+    }
+}
+
+<!-- ngStyle approach -->
+
+<h1 [style.color]="isCondition ? 'green' : 'red'" [style.textTransform]="isCondition ? 'uppercase' : 'lowercase'">Welcome Coder</h1>
+
+<h1 [ngStyle]="{'color' : isCondition ? 'green' : 'red','textTransform': isCondition ? 'uppercase' : 'lowercase'}">Welcome Coder</h1>
+
+
+<!-- ngClass -->
+
+<h1 [class.login]="isCondition" [class.logout]="!isCondition">{{ isCondition ? 'Login Successful' : 'Please Login'}}</h1>
+
+<!-- ngClass approach -->
+
+<h1 [ngClass]="{'login' : isCondition , 'logout' : !isCondition }">ngClass approach</h1>
+
+
+<app-main [navbar]="navbar"></app-main>

@@ -1,14 +1,17 @@
 import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../component/navbar/navbar.component';
+import { MainComponent } from "../component/main/main.component";
 
 @Component({
   selector: 'app-structural',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NavbarComponent, MainComponent],
   templateUrl: './structural.component.html',
   styleUrl: './structural.component.css'
 })
 export class StructuralComponent {
+
   isLoggedIn:boolean = true; 
   userName = "John Doe"
 
@@ -36,16 +39,25 @@ export class StructuralComponent {
   ]
 
   addUser(){
-
     let images = ['1.jfif','2.jfif','3.jfif','4.jfif'];
     let image = images[Math.floor(Math.random() * images.length)];
     let user = {id: Math.floor(Math.random()*10),name: 'John', email: 'john@gmail.com',image:image};
     this.usersObj.push(user);
   }
 
-  onDelete(user:object){
-    let index = this.usersObj.indexOf(user);
+  // onDelete(user:object){
+  //   let index = this.usersObj.indexOf(user);
+  //   this.usersObj.splice(index,1);
+  // }
+
+  userRole = "";
+
+  onDelete(index:number){
     this.usersObj.splice(index,1);
   }
+
+  isCondition:boolean = false;
+
+  navbar = ["Hello","Nothing","Something","Everything"];
 
 }
