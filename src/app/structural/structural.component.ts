@@ -2,6 +2,7 @@ import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../component/navbar/navbar.component';
 import { MainComponent } from "../component/main/main.component";
+import { HttpDataServiceService } from '../services/http-data-service.service';
 
 @Component({
   selector: 'app-structural',
@@ -59,5 +60,24 @@ export class StructuralComponent {
   isCondition:boolean = false;
 
   navbar = ["Hello","Nothing","Something","Everything"];
+
+  buttons = ["Home","About","Contact","Services"]
+
+  switchCase = ""
+
+  hello(evt:any){
+    this.switchCase = evt.target.innerText
+  }
+
+  usersData:any;
+
+  constructor(private _httpDataServiceService:HttpDataServiceService) {}
+
+  ngOnInit(){
+    this._httpDataServiceService.getUsersData().subscribe((_result) => {
+      this.usersData = _result;
+      console.log(this.usersData);
+    })
+  }
 
 }

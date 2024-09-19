@@ -163,6 +163,31 @@
     <p *ngSwitchDefault>Please Login</p>
 </div>
 
+<!-- small task on ngSwitch -->
+
+<button *ngFor="let button of buttons" (click)="hello($event)">
+    {{ button }}
+</button>
+
+<!-- 
+    <button (click)="hello($event)">Home</button>
+    <button (click)="hello($event)">About</button>
+    <button (click)="hello($event)">Contact</button>
+    <button (click)="hello($event)">Services</button> 
+-->
+
+<div [ngSwitch]="switchCase" class="switch">
+
+    <p *ngSwitchCase="'Home'">Home Home Home Home Home Home Home Home Home Home Home Home  ipsum dolor, sit amet consectetur adipisicing elit. Vel voluptates magnam quasi fugit voluptatibus enim cum corrupti similique ea beatae quod deleniti aliquam, quia delectus reiciendis fugiat provident nostrum autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate maiores rem aut sunt deleniti, dolores nemo ea, sint vero saepe, modi minima. Cumque error nisi perferendis animi natus, amet beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste magnam voluptates quo natus possimus error quod hic rem eius reiciendis? Cupiditate ex provident neque accusamus reiciendis molestias perferendis aspernatur adipisci. </p>
+
+    <p *ngSwitchCase="'About'">About About About About About About About About About About About About About About  ipsum dolor sit amet, consectetur adipisicing elit. Voluptate rem suscipit nemo accusantium quas, et eos aspernatur. Voluptates ipsum tempore quod, fuga dolore cupiditate repellat sint numquam, suscipit veniam neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate maiores rem aut sunt deleniti, dolores nemo ea, sint vero saepe, modi minima. Cumque error nisi perferendis animi natus, amet beatae. lormLorem ipsum dolor sit amet consectetur adipisicing elit. Iste magnam voluptates quo natus possimus error quod hic rem eius reiciendis? Cupiditate ex provident neque accusamus reiciendis molestias perferendis aspernatur adipisci.</p>
+
+    <p *ngSwitchCase="'Contact'">Contact Contact Contact Contact Contact Contact Contact Contact Contact Contact Contact Contact Contact Contact  ipsum dolor sit amet, consectetur adipisicing elit. Voluptate rem suscipit nemo accusantium quas, et eos aspernatur. Voluptates ipsum tempore quod, fuga dolore cupiditate repellat sint numquam, suscipit veniam neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate maiores rem aut sunt deleniti, dolores nemo ea, sint vero saepe, modi minima. Cumque error nisi perferendis animi natus, amet beatae. loremmLorem ipsum dolor sit amet consectetur adipisicing elit. Iste magnam voluptates quo natus possimus error quod hic rem eius reiciendis? Cupiditate ex provident neque accusamus reiciendis molestias perferendis aspernatur adipisci.</p>
+
+    <p *ngSwitchCase="'Services'">Services Services Services Services Services Services Services Services Services Services Services Services Services Services  ipsum dolor sit amet, consectetur adipisicing elit. Voluptate rem suscipit nemo accusantium quas, et eos aspernatur. Voluptates ipsum tempore quod, fuga dolore cupiditate repellat sint numquam, suscipit veniam neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate maiores rem aut sunt deleniti, dolores nemo ea, sint vero saepe, modi minima. Cumque error nisi perferendis animi natus, amet beatae. lorem mLorem ipsum dolor sit amet consectetur adipisicing elit. Iste magnam voluptates quo natus possimus error quod hic rem eius reiciendis? Cupiditate ex provident neque accusamus reiciendis molestias perferendis aspernatur adipisci.</p>
+
+</div>
+
 <!-- newest way -->
 
 @switch (userRole) {
@@ -197,3 +222,11 @@
 
 
 <app-main [navbar]="navbar"></app-main>
+
+
+<div class="container">
+    <div class="user" *ngFor="let user of usersData">
+        <h1>{{ user.name }}</h1>
+        <h3>{{ user.username }}</h3>
+    </div>
+</div>
