@@ -80,4 +80,6 @@ export class StructuralComponent {
     })
   }
 
+  message:any = "Hii from parent container";
+
 }
