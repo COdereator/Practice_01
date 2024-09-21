@@ -1,5 +1,5 @@
-import { CommonModule, NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, NgFor, } from '@angular/common';
+import { Component,EventEmitter,Output } from '@angular/core';
 import { NavbarComponent } from '../component/navbar/navbar.component';
 import { MainComponent } from "../component/main/main.component";
 import { HttpDataServiceService } from '../services/http-data-service.service';
@@ -76,10 +76,23 @@ export class StructuralComponent {
   ngOnInit(){
     this._httpDataServiceService.getUsersData().subscribe((_result) => {
       this.usersData = _result;
-      console.log(this.usersData);
+      // console.log(this.usersData);
     })
   }
 
-  message:any = "Hii from parent container";
+  // passing data from parent to child
 
+  childMessage:any = "Hii from child container";
+  isValid = true;
+
+  parentMessage: string = "Message from the child using click event"
+  
+  //  Output and EventEmmiter
+
+  @Output() MessageEvent = new EventEmitter();
+
+  sendMessage(){
+    this.MessageEvent.emit(this.parentMessage);
+  }
+  
 }

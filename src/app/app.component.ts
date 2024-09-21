@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild,AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from "./component/footer/footer.component";
@@ -15,7 +15,7 @@ import { StructuralComponent } from './structural/structural.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'Suru karte hai';
   fname = 'Hello';
   lname = 'World';
@@ -79,5 +79,24 @@ export class AppComponent {
     else{
       this.color="green"
     }
+  }
+
+  @ViewChild(StructuralComponent) childMessage:any;
+
+  constructor(){
+    console.log(this.childMessage);
+  }
+  
+  message = ""
+  valid = ""
+  ngAfterViewInit(){
+    this.message = this.childMessage.childMessage
+    this.valid = this.childMessage.isValid
+  }
+
+  messageFromChild: any;
+  recieveMessage(message:string){
+    console.log(message);
+    this.messageFromChild = message
   }
 }

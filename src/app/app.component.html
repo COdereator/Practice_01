@@ -99,4 +99,13 @@
 Hello : {{ userName }}
 
 
-<app-structural></app-structural>
+<app-structural (MessageEvent)="recieveMessage($event)"></app-structural>
+
+<!-- message from the child using viewchild -->
+
+<p>{{ message }}</p>
+<p>{{ valid }}</p>
+
+<!-- message from the child using click event -->
+
+<h1>{{ messageFromChild }}</h1>

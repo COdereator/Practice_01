@@ -31,3 +31,4 @@ otherwise we will use class binding
 - ng-template is a powerful tool in angular that allows us to define template content that can be used later in out application. Unlike regular HTML elements, ng-template itself will not redered inside the DOM, we can use it when we need  
 
 ## ngTemplateOutlet
+- 
