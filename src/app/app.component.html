@@ -98,8 +98,12 @@
 <input type="text" [(ngModel)]="userName">
 Hello : {{ userName }}
 
-
-<app-structural (MessageEvent)="recieveMessage($event)"></app-structural>
+<!-- ng-cotnent -->
+ 
+<app-structural (MessageEvent)="recieveMessage($event)">
+    <h1 header>this is header loaded using ng-content</h1>
+    <h1 body>this is body loaded using ng-content</h1>
+</app-structural>
 
 <!-- message from the child using viewchild -->
 

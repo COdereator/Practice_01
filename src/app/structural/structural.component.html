@@ -230,3 +230,9 @@
 </div>  
 
 <button (click)="sendMessage()">Send message to parent</button>
+
+<div class="card">
+    <header><ng-content select = '[header]'></ng-content></header>
+    <main><ng-content select = '[body]'></ng-content></main>
+</div>
+
