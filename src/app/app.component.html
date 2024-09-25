@@ -121,4 +121,6 @@ Hello : {{ userName }}
 <button (click)="removeComponent()">Remove Component</button>
 
 
-<app-ng-hooks></app-ng-hooks>
+<app-ng-hooks [parentMessage]="parentMessage"></app-ng-hooks>
+
+<button (click)="changeparentMessage()">Change Name</button>

@@ -114,5 +114,10 @@ export class AppComponent implements AfterViewInit{
     this.viewContainer.remove() 
   }
 
+  parentMessage = "Parent Message"
+
+  changeparentMessage(){
+    this.parentMessage = "Hacker"
+  }
 
 }
