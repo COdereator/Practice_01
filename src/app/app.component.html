@@ -109,3 +109,12 @@ Hello : {{ userName }}
 <!-- message from the child using click event -->
 
 <h1>{{ messageFromChild }}</h1>
+
+
+<div *ngComponentOutlet="loadComponent()"></div>
+
+<button (click)="createComponent()">Create Component</button>
+<button (click)="removeComponent()">Remove Component</button>
+
+
+<app-ng-hooks></app-ng-hooks>

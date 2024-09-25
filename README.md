@@ -32,3 +32,28 @@ otherwise we will use class binding
 
 ## ngTemplateOutlet
 - 
+
+
+## Lifecycle Hooks in Angular
+- lifecycle hooks are special methods provided by Angular that allow us to tap into different stages of a component lifecycle. From the moment a component is created to the moment it is destroyed, Angular provides hooks that let us run login at specific times  
+
+1. ngOnInit 
+    - called once after the component is initialized
+2. ngOnChanges 
+    - called every time on input proprerty changes
+3. ngDoCheck 
+    - called during every change detection run
+4. ngAfterContentInit
+    - called once after component content has been initalized
+5. ngAfterContentChecked
+    - called after every check of the component content
+6. ngAferViewInit
+    - called once after the component views has been initialized 
+7. ngAfterViewChecked
+    - called after every check for the component's view
+8. ngOnDestroy
+    -  called just before the component is destroy  
+
+
+*ngComponentOutlet 
+    - it is use to load the component in view

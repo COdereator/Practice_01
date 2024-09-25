@@ -95,4 +95,6 @@ export class StructuralComponent {
     this.MessageEvent.emit(this.parentMessage);
   }
   
+  
+
 }

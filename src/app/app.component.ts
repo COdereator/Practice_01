@@ -1,4 +1,4 @@
-import { Component,ViewChild,AfterViewInit } from '@angular/core';
+import { Component,ViewChild,AfterViewInit, ViewContainerRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from "./component/footer/footer.component";
@@ -7,11 +7,12 @@ import { HeaderComponent } from './component/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { StructuralComponent } from './structural/structural.component';
+import { NgHooksComponent } from "./ng-hooks/ng-hooks.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent,MainComponent,HeaderComponent,FormsModule,CommonModule,StructuralComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, MainComponent, HeaderComponent, FormsModule, CommonModule, StructuralComponent, NgHooksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -83,7 +84,7 @@ export class AppComponent implements AfterViewInit{
 
   @ViewChild(StructuralComponent) childMessage:any;
 
-  constructor(){
+  constructor(private viewContainer: ViewContainerRef){
     console.log(this.childMessage);
   }
   
@@ -99,4 +100,19 @@ export class AppComponent implements AfterViewInit{
     console.log(message);
     this.messageFromChild = message
   }
+
+
+  loadComponent(){
+    return FooterComponent 
+  }
+
+  createComponent(){
+    this.viewContainer.createComponent(FooterComponent) 
+  }
+
+  removeComponent(){
+    this.viewContainer.remove() 
+  }
+
+
 }
