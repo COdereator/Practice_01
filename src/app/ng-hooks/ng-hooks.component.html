@@ -5,3 +5,45 @@ Name : {{ parentMessage }}
 Number : {{ number }}
 
 <button (click)="increament()">Increament</button>
+
+<!-- Pipes -->
+
+<h1>{{ pipes }}</h1>
+
+<h2>{{ pipes | uppercase }}</h2>
+<h2>{{ pipes | lowercase }}</h2>
+<h2>{{ pipes | titlecase }}</h2>
+
+<!-- Number pipes -->
+
+<h2>{{ 1233123.23 | number }}</h2>
+
+<!-- percentage pipe -->
+
+<h2>{{ 0.7 | percent }}</h2>
+
+<!-- currenct pipe -->
+
+<h2>{{ 1000 | currency : 'GBP' }}</h2>
+
+<!-- Date & Time pipe -->
+
+<h2>Date : {{ today | date }}</h2>
+<h2>short : {{ today | date : 'short' }}</h2>
+<h2>medium : {{ today | date : 'medium' }}</h2>
+<h2>long : {{ today | date : 'long'}}</h2>
+<h2>full : {{ today | date : 'full'}}</h2>
+<h2>shortDate : {{ today | date : 'shortDate'}}</h2>
+<h2>mediumDate : {{ today | date : 'mediumDate'}}</h2>
+<h2>longDate : {{ today | date : 'longDate'}}</h2>
+<h2>fullDate : {{ today | date : 'fullDate'}}</h2>
+
+
+<!-- JSON pipes -->
+
+<h2>JSON : {{ userObj | json }}</h2>
+<button (click)="convertJson()">Convert JSON</button>
+
+<!-- slice pipes -->
+
+<h2>{{ 'Hello Angular World' | slice : 6  }}</h2>

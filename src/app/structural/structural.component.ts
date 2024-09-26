@@ -80,7 +80,7 @@ export class StructuralComponent {
     })
   }
 
-  // passing data from parent to child
+  // passing data from child to parent
 
   childMessage:any = "Hii from child container";
   isValid = true;
@@ -89,7 +89,7 @@ export class StructuralComponent {
   
   //  Output and EventEmmiter
 
-  @Output() MessageEvent = new EventEmitter();
+  @Output() MessageEvent = new EventEmitter<string>();
 
   sendMessage(){
     this.MessageEvent.emit(this.parentMessage);

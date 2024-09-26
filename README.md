@@ -57,3 +57,7 @@ otherwise we will use class binding
 
 *ngComponentOutlet 
     - it is use to load the component in view
+
+
+## Angular Pipes 
+- Simply pipes are a way to transform data directly in your templates. Think of them as little tools that take in some data do some processing on it, and then return a nicely formatted output right.

@@ -82,20 +82,24 @@ export class AppComponent implements AfterViewInit{
     }
   }
 
-  @ViewChild(StructuralComponent) childMessage:any;
+  @ViewChild(StructuralComponent) child!: StructuralComponent;
 
   constructor(private viewContainer: ViewContainerRef){
-    console.log(this.childMessage);
+    console.log(this.child);
   }
   
   message = ""
-  valid = ""
-  ngAfterViewInit(){
-    this.message = this.childMessage.childMessage
-    this.valid = this.childMessage.isValid
+  valid:any
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.message = this.child.childMessage;
+      this.valid = this.child.isValid;
+    });
   }
 
   messageFromChild: any;
+
   recieveMessage(message:string){
     console.log(message);
     this.messageFromChild = message
