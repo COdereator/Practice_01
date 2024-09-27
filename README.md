@@ -61,3 +61,7 @@ otherwise we will use class binding
 
 ## Angular Pipes 
 - Simply pipes are a way to transform data directly in your templates. Think of them as little tools that take in some data do some processing on it, and then return a nicely formatted output right.
+
+
+## Angular Services
+- A Service in angular is a class that provides specific functionality across multiple components in your application. Services are designed to handle tasks like data fetchin, business login, logging or any operation that sould be shared across components.
