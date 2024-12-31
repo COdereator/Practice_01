@@ -8,7 +8,7 @@ import { Component, DoCheck, Input, OnChanges, OnInit } from '@angular/core';
   templateUrl: './ng-hooks.component.html',
   styleUrl: './ng-hooks.component.css'
 })
-export class NgHooksComponent implements OnChanges, OnInit, DoCheck{
+export class NgHooksComponent implements OnChanges, OnInit{
 
   number = 0;
 
@@ -23,9 +23,9 @@ export class NgHooksComponent implements OnChanges, OnInit, DoCheck{
     console.log("OnChange Triggered");
   }
 
-  ngDoCheck() {
-      console.log("DoCheck Triggered");
-  }
+  // ngDoCheck() {
+  //     console.log("DoCheck Triggered");
+  // }
 
   constructor(){
     console.log("Constructor Method Triggered");

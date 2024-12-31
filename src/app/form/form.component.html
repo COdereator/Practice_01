@@ -2,20 +2,24 @@
 <form class="row g-3 needs-validation" #form="ngForm" novalidate>
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label">First name</label>
-    <input type="text" class="form-control" name="firstName" #fname="ngModel" [(ngModel)]="studentObj.firstName" id="validationCustom01" required minlength="3">
+    <input type="text" class="form-control" name="firstName" #fname="ngModel" [(ngModel)]="studentObj.firstName" id="validationCustom01" required minlength="4">
 
     <div class="text-danger mt-2">
-      @if(( fname?.['touched'] || fname.dirty )&& fname.errors?.['required']){
+      @if(( fname?.['touched'] || fname.dirty ) && fname.errors?.['required']){
         <span>This is required</span>
       }
-      @else if (( fname?.['touched'] || fname.dirty )&& fname.errors?.['minlength']) {
+      @else if (( fname?.['touched'] || fname.dirty ) && fname.errors?.['minlength']) {
         <span>Minimum length is > 3</span>
       }
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Last name</label>
-    <input type="text" class="form-control" name="lastName" [(ngModel)]="studentObj.lastName" id="validationCustom02" required>
+    <input type="text" class="form-control" #lname="ngModel" name="lastName" minlength="4" [(ngModel)]="studentObj.lastName" id="validationCustom02" required>
+    <div class="text-danger">
+      <span *ngIf="lname?.['touched'] && lname.errors?.['required']">This is required</span>
+      <span *ngIf="lname?.['touched'] && lname.errors?.['minlength']">Minimum length is 4</span>
+    </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustomUsername" class="form-label">Username</label>

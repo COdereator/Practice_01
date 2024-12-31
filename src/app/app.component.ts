@@ -9,11 +9,12 @@ import { CommonModule } from '@angular/common';
 import { StructuralComponent } from './structural/structural.component';
 import { NgHooksComponent } from "./ng-hooks/ng-hooks.component";
 import { FormComponent } from "./form/form.component";
+import { Form02Component } from './form-02/form-02.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, MainComponent, HeaderComponent, FormsModule, CommonModule, StructuralComponent, NgHooksComponent, FormComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, MainComponent, HeaderComponent, FormsModule, CommonModule, StructuralComponent, NgHooksComponent, FormComponent,Form02Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
