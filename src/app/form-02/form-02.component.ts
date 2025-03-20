@@ -10,6 +10,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './form-02.component.css'
 })
 export class Form02Component {
+  
     userForm: FormGroup = new FormGroup({
       fname: new FormControl("",[Validators.required]),
       lname: new FormControl("",[Validators.required,Validators.minLength(4)]),
@@ -23,6 +24,8 @@ export class Form02Component {
     onUserSave(){
       const formValue = this.userForm.value
       console.log(formValue);
+
+      this.userForm.reset();
     }
 
 }

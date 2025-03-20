@@ -2,7 +2,7 @@
     <form class="row g-3 needs-validation" (ngSubmit)="onUserSave()" [formGroup]="userForm">
         <div class="col-md-4">
           <label for="validationCustom01" class="form-label">First name</label>
-          <input type="text" formControlName="fname" class="form-control" id="validationCustom01" required>
+          <input type="text" formControlName="fname" class="form-control" id="validationCustom01">
           <div class="text-danger">
             @if(userForm.controls['fname'].errors?.['required'] && userForm.controls['fname'].touched){
                 <span>This is required</span>
